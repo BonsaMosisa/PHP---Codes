@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    p {
+      background-color: brown;
+    }
+  </style>
+
+</head>
+
+<body>
+  <form action="index.php" method="post">
+    <label for="number 1">Number 1</label>
+    <input type="text" name="number1">
+    <br>
+    <label for="number 2">Number 2</label>
+    <input type="text" name="number2">
+    <br>
+    <select name="opr" id="">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="/">/</option>
+      <option value="*">*</option>
+    </select>
+    <input type="submit" value="Calculate">
+  </form>
+
+</body>
+
+</html>
+<?php
+error_reporting(0);
+$num1 = $_POST["number1"];
+$num2 = $_POST["number2"];
+$opr = $_POST["opr"];
+
+
+switch ($opr) {
+  case "+":
+    echo  $num1 + $num2;
+    break;
+  case "-";
+    echo $num1 - $num2;
+    break;
+  case "*";
+    echo $num1 * $num2;
+    break;
+  case "/";
+    echo $num1 / $num2;
+    break;
+  default:
+    echo "not valid";
+}
+
+echo "<br><p>This is to swap the number</p>";
+
+
+$temp = $num1;
+$num1 = $num2;
+$num2 = $temp;
+
+
+echo "<br> After Swapped ";
+echo "<br>Number 1 :" . $num1;
+echo "<br>Number 2 :" . $num2;
+
+
+
+$today = getdate();
+$number1 = 2;
+$number2 = 5;
+$your_city = "Jimma";
+echo "<br>Todays date is "  . $today["weekday"];
+
+?>
